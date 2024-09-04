@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.login-container {
+    display: flex;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    max-width: 800px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f4f4;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+}
+
+.form-container {
+    flex: 1;
+    padding: 50px 30px;
+}
+
+.logo {
+    font-size: 40px;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+form p {
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #666;
+}
+
+form label {
+    font-size: 14px;
+    color: #333;
+    display: block;
+    margin-bottom: 5px;
+}
+
+form input[type="text"],
+form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #333;
+}
+
+.password-container {
+    position: relative;
+}
+
+.password-container i {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+    color: #888;
+}
+
+form .remember-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+form .remember-container input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+form .forgot-password {
+    display: block;
+    margin-bottom: 20px;
+    color: #48cae4;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+form .login-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+form .signup-text {
+    text-align: center;
+    margin-top: 20px;
+    color: #666;
+    font-size: 14px;
+}
+
+form .signup-text a {
+    color: #48cae4;
+    text-decoration: none;
+}
+
+
+
+

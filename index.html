@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RUMI</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a572cee94c.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="login-container">
+        <div class="image-container">
+            <img src="amigos.png" alt="Roommates taking selfie">
+        </div>
+        <div class="form-container">
+            <h1 class="logo">RUMI</h1>
+            <p>Please enter your details to login to your account.</p>
+            <form>
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                
+                <label for="password">Password</label>
+                <div class="password-container">
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                    <i class="fa-regular fa-eye-slash" id="password_visibility"></i>
+                </div>
+
+                <div class="remember-container">
+                    <input type="checkbox" id="remember" name="remember">
+                    <label for="remember">Keep me logged in</label>
+                </div>
+
+                <a href="#" class="forgot-password">Forgot your password?</a>
+                
+                <button type="submit" class="login-button"></button>
+
+                <p class="signup-text">Don't you have an account? <a href="#">Sing Up</a></p>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+
+<html>
+ <head>
+  <title>
+   Options
+  </title>
+  <style>
+   body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 2em;
+            color: #333;
+            text-align: left;
+        }
+        .filters {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .filters select, .filters input, .filters button {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            font-size: 1em;
+        }
+        .filters button {
+            background-color: #333;
+            color: #fff;
+            cursor: pointer;
+        }
+        .item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+        .item img {
+            width: 150px;
+            height: 100px;
+            border-radius: 8px;
+            margin-right: 20px;
+        }
+        .item .details {
+            flex: 1;
+        }
+        .item .details h2 {
+            font-size: 1.5em;
+            margin: 0;
+            color: #333;
+        }
+        .item .details p {
+            margin: 5px 0;
+            color: #666;
+        }
+        .item .details .price {
+            font-size: 1.2em;
+            color: #000;
+        }
+  </style>
+  <script>
+   function filterResults() {
+            var location = document.getElementById("location").value;
+            var size = document.getElementById("size").value;
+            var price = document.getElementById("price").value;
+
+            var items = document.getElementsByClassName("item");
+            for (var i = 0; i < items.length; i++) {
+                var itemLocation = items[i].getAttribute("data-location");
+                var itemSize = items[i].getAttribute("data-size");
+                var itemPrice = items[i].getAttribute("data-price");
+
+                if ((location === "Location" || itemLocation === location) &&
+                    (size === "Size" || itemSize === size) &&
+                    (price === "" || parseInt(itemPrice) <= parseInt(price))) {
+                    items[i].style.display = "flex";
+                } else {
+                    items[i].style.display = "none";
+                }
+            }
+        }
+
+        function removeSizeOption() {
+            var sizeSelect = document.getElementById("size");
+            if (sizeSelect.options[0].text === "Size") {
+                sizeSelect.remove(0);
+            }
+        }
+  </script>
+ </head>
+ <body>
+  <div class="container">
+   <h1>
+    Options
+   </h1>
+   <div class="filters">
+    <select id="location">
+     <option>
+      Location
+     </option>
+     <option>
+      La Libertad
+     </option>
+     <option>
+      Apopa
+     </option>
+     <option>
+      San Salvador
+     </option>
+     <option>
+      Santa Ana
+     </option>
+     <option>
+      San Miguel
+     </option>
+     <option>
+      Sonsonate
+     </option>
+     <option>
+      Usulután
+     </option>
+     <option>
+      Ahuachapán
+     </option>
+     <option>
+      La Paz
+     </option>
+     <option>
+      La Unión
+     </option>
+     <option>
+      Morazán
+     </option>
+     <option>
+      Chalatenango
+     </option>
+     <option>
+      Cuscatlán
+     </option>
+     <option>
+      Cabañas
+     </option>
+    </select>
+    <select id="size" onclick="removeSizeOption()">
+     <option>
+      Size
+     </option>
+     <option>
+      Small
+     </option>
+     <option>
+      Medium
+     </option>
+     <option>
+      Large
+     </option>
+    </select>
+    <input id="price" placeholder="Price (e.g., $200)" type="text"/>
+    <button onclick="filterResults()">
+     Search
+    </button>
+   </div>
+   <div class="item" data-location="La Libertad" data-price="200" data-size="Medium">
+    <img alt="Image of a house" height="100" src="/mnt/data/image.png" width="150"/>
+    <div class="details">
+     <h2>
+      House in La Libertad
+     </h2>
+     <p>
+      House available with roommies.
+     </p>
+     <p class="price">
+      $200
+     </p>
+    </div>
+   </div>
+   <div class="item" data-location="Apopa" data-price="250" data-size="Large">
+    <img alt="Image of a house" height="100" src="/mnt/data/soya.jpg" width="150"/>
+    <div class="details">
+     <h2>
+      House in Apopa
+     </h2>
+     <p>
+      Big House with garden.
+     </p>
+     <p class="price">
+      $250
+     </p>
+    </div>
+   </div>
+   <div class="item" data-location="San Salvador" data-price="150" data-size="Small">
+    <img alt="Image of a house" height="100" src="/mnt/data/apopa1.png" width="150"/>
+    <div class="details">
+     <h2>
+      House in San Salvador
+     </h2>
+     <p>
+      Small house in el centro.
+     </p>
+     <p class="price">
+      $150
+     </p>
+    </div>
+   </div>
+   <div class="item" data-location="Santa Ana" data-price="300" data-size="Large">
+    <img alt="Image of a house" height="100" src="/mnt/data/image.png" width="150"/>
+    <div class="details">
+     <h2>
+      House in Santa Ana
+     </h2>
+     <p>
+      Big house and pool.
+     </p>
+     <p class="price">
+      $300
+     </p>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>
